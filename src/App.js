@@ -26,7 +26,7 @@ export default function App() {
     }
   ]);
 
-  const deleteUserName = (id) => {
+  const deleteUser = (id) => {
     window.confirm("are you sure");
     let modifyedData = data.filter((item) => item.id !== id);
     setData(modifyedData);
@@ -42,7 +42,7 @@ export default function App() {
     setData(updatedList);
   }
 
-  const onsubmit = (e) => {
+  const updateSubmit = (e) => {
     input.current.style.display = "none";
     setEdit("");
     alert("updated successFully");
@@ -62,9 +62,9 @@ export default function App() {
             <p>{item.username}</p>
           )}
 
-          <button onClick={() => deleteUserName(item.id)}>Delete</button>
+          <button onClick={() => deleteUser(item.id)}>Delete</button>
           {item.id === edit.id ? (
-            <button onClick={(e) => onsubmit(e)}>Update</button>
+            <button onClick={(e) => updateSubmit(e)}>Update</button>
           ) : (
             <button onClick={() => setEdit(item)}>Edit</button>
           )}
